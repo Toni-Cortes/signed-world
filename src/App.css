@@ -5,38 +5,330 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1{
+
+    font-family: "Caudex", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #58698d;;
+   
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.italic-bold{
+  font-family: "Old Standard TT", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 1.5em;
+
+  display: block;
+  margin-top: 20px;
+  color: aliceblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.description{
+  font-size: 1.4rem;
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+  .mirror{
+    display: inline-block; 
+  
+
+    -webkit-transform: matrix(0, 0, 0, 0, 0, 0);
+    -moz-transform: matrix(0, 0, 0, 0, 0, 0);
+    -o-transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: matrix(-1, 0, 0, -1, 0, 0);
 }
 
-.card {
-  padding: 2em;
+
+.main-buttons{
+  display: flex;
+  justify-content: center;
+
+  margin: 5%;
+  gap: 20px; 
 }
 
-.read-the-docs {
-  color: #888;
+.main-button{
+  font-size: 1.3rem;
+  padding: 2vh 3vh; 
+}
+
+form{
+  width: 70%;
+  margin: auto;
+  display: flex;
+  
+  flex-direction: column;
+
+  background-color: #283041;
+  padding: 5%;
+  border-radius: 8px;
+}
+
+label{
+  
+  
+  display: flex;
+  
+  flex-direction: column;
+  text-align: left;
+
+}
+
+
+form h3 {
+  margin-bottom: 3px;
+  margin-top: 10px;
+  font-family: 'Caudex';
+}
+
+form p {
+  margin-top: 3px;
+  color: #697da8;
+  font-size: 0.8em; 
+}
+
+form button {
+  margin-top: 10px;
+  background-color: #151b27;
+  padding: 20px;
+}
+
+input[type="text"], textarea {
+  background-color:#3c4967 ;
+  border: 0px;
+  border-radius: 2px;
+  margin-bottom: 25px;
+  padding: 10px;
+  
+}
+
+
+.tokenDiv{
+  display: flex;
+
+  width: 100%;
+
+  align-items: center;
+  gap: 4px;
+
+  margin-bottom: 45px;
+}
+
+/* .generateButton{
+  padding: 3px;
+  width: 90px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+} */
+
+.tokenDiv input, .tokenDiv button{
+
+  font-size: 1rem;
+  margin: 1px;
+  padding: 5px 8px;
+  border-radius: 3px;
+}
+
+.tokenDiv input{
+
+ padding: 7px 8px;
+ flex-grow: 1;
+}
+
+.editPin{
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  padding: 0;
+  margin: 0;
+
+  
+
+}
+
+.editPin form{
+  width: 100%;
+  margin: 5%;
+  padding: 5% 10%;
+  
+
+}
+
+.editPin h1{
+  text-align: center;
+  color: #dbdfe6;
+  font-size: 2rem;
+}
+
+.editPin span{
+  color:#6477a1;
+}
+
+.pins{
+  background-color: #151b27;
+  min-width: 350px;
+  padding: 5% 10%;
+  margin: 5%;
+
+  width: 100%; 
+  border-radius: 5px;
+}
+
+.pins h1{
+  color:#58698d ;
+}
+
+.pin{
+  background-color: #283041;
+  border-radius: 4px;
+  text-align: left;
+  margin: 2% 1%;
+  padding: 3% 4%;
+
+  flex-grow: 1;
+  min-height: 90px;
+  min-width: 190px;
+}
+
+.pin h3{
+  margin: 0;
+  color: #697da8;
+}
+
+.pin p{
+  margin: 5px 0px;
+}
+
+.pin span{
+  font-size: 0.8rem;  
+}
+
+.pinContainer{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.pinButtons{
+  display: flex;
+  flex-direction: column;
+  gap: 9%;
+
+  min-height: 100%;
+
+  
+  padding: 2% 1%;
+  
+
+}
+
+.pinButtons button{
+  border-radius: 3px;
+  height: 100%;
+
+ background-color: #0f1520;
+ color: #434f6b;
+
+
+ }
+
+ .editPinContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;  
+  top: 0;  
+  left: 0; 
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(15, 21, 32, 0.8); 
+  backdrop-filter: blur(4px); 
+  
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  z-index: 100;
+ }
+
+.editPinContainer form{
+  width: 40%;
+  max-width: 500px;
+  padding: 4%;
+}
+
+.editPinContainer label{
+  font-weight: 700;
+
+
+}
+
+.editPinContainer input, .editPinContainer textarea{
+  color: white;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin-top: 5px;
+
+}
+
+.editPinContainer h2{
+  margin-bottom: -30px;
+  font-family: "Caudex", serif;
+  font-size: 2rem;
+}
+
+.editPinContainer span {
+  color: #6477a1;
+}
+
+.leaflet-container{
+
+  height: 70vh;
+
+  margin: auto; 
+  background-color: #0f1520;
+  border-radius: 15px;
+}
+
+.leaflet-popup-content, .leaflet-popup-content-wrapper, .custom-popup, .leaflet-popup-tip{
+ 
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.leaflet-popup-content-wrapper, .custom-popup{
+  border-radius: 5px ;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-content{
+ 
+  width: auto;
+  color: white !important;
+  min-width: 210px;
+}
+
+
+.leaflet-marker-icon div{
+ background-color: #3c4967 !important;
+}
+.marker-cluster-small{
+  background-color: #5f73a0 !important;
+}
+.leaflet-control-zoom-in, .leaflet-control-zoom-out{
+  background-color: rgba(88, 118, 173, 0.2) !important;
+}
+
+.leaflet-control-zoom-in span, .leaflet-control-zoom-out span{
+  color: white !important;
 }
