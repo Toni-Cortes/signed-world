@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 
+
 function Pins({token, refresh, triggerRefresh, setIsEditing, setEditId}) {
 
     
@@ -11,7 +12,7 @@ function Pins({token, refresh, triggerRefresh, setIsEditing, setEditId}) {
 
     useEffect(() => {
         if (token) { 
-            axios.get(`http://localhost:8000/messages?token=${token}`)
+            axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}messages?token=${token}`)
                 .then((response) => {
                     setPins(response.data);
                     console.log('Pins fetched:', response.data);
@@ -23,7 +24,7 @@ function Pins({token, refresh, triggerRefresh, setIsEditing, setEditId}) {
     }, [token, refresh]);
 
     function deletePins(id){
-        axios.delete(`http://localhost:8000/messages/${id}`)
+        axios.delete(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}messages/${id}`)
         .then(() => {
             console.log("in .then()")
             triggerRefresh();
@@ -40,7 +41,7 @@ function Pins({token, refresh, triggerRefresh, setIsEditing, setEditId}) {
     }
     return (
         <div className="pins">
-            <h1>Your Pins</h1>
+            <h1 style={{marginTop: '20px'}}>Your Pins</h1>
             {pins &&
                 (
                     pins.map((onePin) => {

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Pins from "./Pins";
 import EditPin from "./EditPin";
+import { useNavigate } from "react-router-dom";
+
 
 
 function EditPins() {
@@ -12,6 +14,7 @@ function EditPins() {
   const [editId, setEditId] = useState(0);
   const [isEditing, setIsEditing] = useState(false);
 
+  const navigate = useNavigate()
 
   function handleSubmit(e) {
 
@@ -28,10 +31,11 @@ function EditPins() {
 
 
   return (
-    <div className="editPin">
-      <form onSubmit={handleSubmit}>
+    <div className="editPin" style={{/* width: '80vw'} */}}>
+      
+      <form onSubmit={handleSubmit}style={{paddingTop: '10px'}}>
         <label>
-          <h1>Introduce your <span>Token</span></h1>
+          <h1 style={{marginTop: '30px'}}>Introduce your <span>Token</span></h1>
           <input type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)} />
@@ -55,7 +59,7 @@ function EditPins() {
       {isEditing && (
         <EditPin id = {editId} setIsEditing={setIsEditing} /* setRefresh={setRefresh} */ triggerRefresh={triggerRefresh}></EditPin>
       )}
-
+<button className='backButton' onClick={()=>navigate('/')}>←</button>
     </div>
   )
 }

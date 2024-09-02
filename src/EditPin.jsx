@@ -18,7 +18,7 @@ function EditPin({id, triggerRefresh, setIsEditing}) {
     
     useEffect(() => {
       
-        axios.get(`http://localhost:8000/messages/${id}`)
+        axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}messages/${id}`)
         .then((response) => {
             setName(response.data.name);
             console.log(name)
@@ -44,7 +44,7 @@ function EditPin({id, triggerRefresh, setIsEditing}) {
             currentDate: new Date().toLocaleString()
         }
 
-        axios.put(`http://localhost:8000/messages/${id}`, newPin)
+        axios.put(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}messages/${id}`, newPin)
         .then(()=>{
             
             alert("Pin updated")

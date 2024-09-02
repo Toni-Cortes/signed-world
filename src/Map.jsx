@@ -23,12 +23,22 @@ function Map() {
       });
   }, [])
 
+  const bounds = [
+    [-90, -180], // Southwest corner (latitude, longitude)
+    [90, 180],   // Northeast corner (latitude, longitude)
+  ];
 
   return (
-    <MapContainer center={[40, 0]} zoom={1.5} scrollWheelZoom={true} minZoom={1.5}>
+    <MapContainer center={[45, 0]} zoom={2.5} scrollWheelZoom={true} minZoom={3} maxBounds={bounds}>
+      
+      
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
         url='https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png'
+        
+    
+        bounds={bounds}              // Ensures tiles are loaded only within these bounds
+      
       />
       
         <MarkerClusterGroup>
@@ -39,6 +49,7 @@ function Map() {
               <Popup className='custom-popup'>
                 
                 <Pin pin={pin}></Pin>
+                {/* <form action=""><label htmlFor=""><input type="text" /></label></form> */}
                 
               </Popup>
             </Marker>

@@ -52,7 +52,7 @@ function CreatePin() {
                 currentDate: new Date().toLocaleString()
             }
 
-            axios.post('http://localhost:8000/messages', newPin)
+            axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}messages`, newPin)
                 .then(() => {
                     alert("Congrats you created a Pin")
                     navigate('/')
@@ -67,7 +67,8 @@ function CreatePin() {
 
     return (
         <div>
-            <h1 style={{ color: 'white', fontFamily: 'Unna' }}>Create your <span style={{ color: '#697da8' }}>Pin</span></h1>
+            
+            <h1 style={{ color: 'white', fontFamily: 'Unna', marginTop: '40px' }}>Create your <span style={{ color: '#697da8' }}>Pin</span></h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>
@@ -116,7 +117,7 @@ function CreatePin() {
                 </div>
                 <button type="submit">Submit</button>
             </form>
-
+            <button className='backButton' onClick={()=>navigate('/')} style={{margin:'40px auto'}}>←</button>
         </div>
     )
 }
