@@ -13,7 +13,7 @@ function Map() {
   const [allPins, setAllPins] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/messages`)
+    axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}messages`)
       .then((response) => {
         setAllPins(response.data);
         console.log('Pins fetched:', response.data);
