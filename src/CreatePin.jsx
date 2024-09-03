@@ -19,6 +19,7 @@ function CreatePin() {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude,
                     });
+                    console.log(position); // Log the full position object for debugging
                 },
                 (err) => {
                     console.log(err.message);
@@ -29,12 +30,6 @@ function CreatePin() {
             navigate('/');
         }
     }, []);
-
-    useEffect(() => {
-        if (location.lat !== null && location.lng !== null) {
-            // Re-render when location is updated
-        }
-    }, [location]);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -75,7 +70,7 @@ function CreatePin() {
                 <div>
                     <label>
                         <h3>Name</h3>
-                        <p>The name you want to be displayed as the author of your mesage.<br /> (Ex. Anonymous)</p>
+                        <p>The name you want to be displayed as the author of your message.<br /> (Ex. Anonymous)</p>
                         <input
                             type="text"
                             value={name}
@@ -96,7 +91,7 @@ function CreatePin() {
                 <div>
                     <label>
                         <h3>Token</h3>
-                        <p>Your token is what you will use to delete, edit or view your pins. Similar to a password. Do not forget it.  </p>
+                        <p>Your token is what you will use to delete, edit, or view your pins. Similar to a password. Do not forget it.</p>
                         <div className='tokenDiv'>
                             <button type='button' className='generateButton' onClick={() => setToken(uuidv4())}>
                                 Generate

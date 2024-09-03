@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+button{
+  color: white !important;
+}
+
 h1{
 
     font-family: "Caudex", serif;
