@@ -42,6 +42,7 @@ function CreatePin() {
     function handleSubmit(e) {
         e.preventDefault()
         
+        if (navigator.geolocation){
 
         if ((name!='')&&(message!='')&&(token!='')) {
             let newPin = {
@@ -63,7 +64,11 @@ function CreatePin() {
             alert('Information incomplete')
         }
 
+    }else {
+        alert("Please allow location on browser settings");
+        navigate('/')
     }
+}
 
     return (
         <div>
