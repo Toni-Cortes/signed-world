@@ -42,7 +42,7 @@ function CreatePin() {
     function handleSubmit(e) {
         e.preventDefault()
         
-        if ((navigator.geolocation)&&(locatio.lat)&&(location.lng)){
+        if ((navigator.geolocation)&&(location.lat)&&(location.lng)){
 
         if ((name!='')&&(message!='')&&(token!='')) {
             let newPin = {
